@@ -488,3 +488,15 @@ footer {
     border-top: 5px solid var(--merah-tua);
     font-size: 0.9rem;
 }
+
+/* Efek masuk saat scroll */
+.content-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
