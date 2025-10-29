@@ -113,3 +113,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.content-section');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // cukup sekali
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -100px 0px',
+    threshold: 0.1
+  });
+
+  sections.forEach(s => observer.observe(s));
+});
