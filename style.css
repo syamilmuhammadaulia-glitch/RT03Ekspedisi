@@ -524,3 +524,13 @@ footer {
     font-size: 1.1rem;
     font-style: italic;
 }
+#dokumentasi {
+  text-align: center;
+  padding: 20px;
+}
+
+#dokumentasi img {
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
