@@ -296,7 +296,7 @@ main {
 
 .profil-card h3 {
     margin: 0.5rem 0;
-    color: var(--abu-terang);
+    color: var(--utama-gelap);
     font-size: 1.3rem;
     min-height: 40px; /* Jaga tinggi h3 biar sejajar */
 }
