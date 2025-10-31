@@ -530,8 +530,14 @@ footer {
   padding: 20px;
 }
 
+/* Biar semua gambar di dokumentasi seragam */
 #dokumentasi img {
-  width: 300px;
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 10px;
-  margin: 10px;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
