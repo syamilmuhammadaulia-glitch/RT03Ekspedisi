@@ -129,10 +129,8 @@ nav ul li a:focus {
 
 /* Bagian 1: Hero Section (Beranda) */
 #beranda.hero-section {
-    background: linear-gradient(rgba(0, 32, 74, 0.8), rgba(0, 32, 74, 0.8)), url('path/ke/foto_latar_belakang.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--latar-terang);
+    background: #FFFFFF;
+    color: #000000;
     text-align: center;
     padding: 3rem 2rem; 
     min-height: 40vh; 
