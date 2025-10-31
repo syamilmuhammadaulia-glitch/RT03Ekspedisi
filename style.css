@@ -1,33 +1,32 @@
 /* Tema dan Warna Dasar */
 :root {
-  --biru-tua: #012B5B;
-  --merah-tua: #C1121F;
-  --gold: #FFD700;
+  --utama-gelap: #1E1E1E;
+  --abu-terang: #F5F5F5;
+  --emas: #FFB400;
+  --teks: #2C2C2C;
   --putih: #FFFFFF;
-  --latar-terang: #F9FAFB;
-  --latar-alternatif: #E8EEF4;
-  --teks-biasa: #2C2C2C;
+  --aksen-abu: #3A3A3A;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--latar-terang);
-  color: var(--teks-biasa);
+  background-color: var(--abu-terang);
+  color: var(--teks);
   line-height: 1.7;
 }
 
 /* Header dan Navigasi */
 header {
-  background: linear-gradient(135deg, var(--biru-tua), #001a3d);
-  color: var(--gold);
+  background: linear-gradient(135deg, var(--utama-gelap), #000000);
+  color: var(--emas);
   padding: 1rem 0;
-  border-bottom: 4px solid var(--merah-tua);
+  border-bottom: 4px solid var(--emas);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
 }
 
 nav {
@@ -61,13 +60,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: var(--gold);
-  color: var(--biru-tua);
+  background-color: var(--emas);
+  color: var(--utama-gelap);
 }
 
 /* Hero Section */
 #beranda.hero-section {
-  background: linear-gradient(rgba(1, 43, 91, 0.85), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(0, 0, 0, 0.7)),
     url('path/ke/foto_latar_belakang.jpg') center/cover no-repeat;
   text-align: center;
   color: var(--putih);
@@ -80,14 +79,14 @@ nav ul li a:hover {
 
 #beranda.hero-section h1 {
   font-size: 3rem;
-  color: var(--gold);
+  color: var(--emas);
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero-logo {
   width: 90px;
   height: 90px;
-  border: 2px solid var(--gold);
+  border: 2px solid var(--emas);
   border-radius: 50%;
   padding: 6px;
   transition: transform 0.3s ease;
@@ -100,8 +99,8 @@ nav ul li a:hover {
 /* Section Judul */
 .content-section h2 {
   font-size: 2.2rem;
-  color: var(--merah-tua);
-  border-bottom: 3px solid var(--gold);
+  color: var(--utama-gelap);
+  border-bottom: 3px solid var(--emas);
   padding-bottom: 0.4rem;
   text-align: center;
   letter-spacing: 1px;
@@ -109,7 +108,7 @@ nav ul li a:hover {
 
 /* Timeline */
 .timeline {
-  border-left: 4px solid var(--merah-tua);
+  border-left: 4px solid var(--emas);
   padding: 2rem 0;
 }
 
@@ -131,15 +130,15 @@ nav ul li a:hover {
   top: 5px;
   width: 20px;
   height: 20px;
-  background-color: var(--gold);
-  border: 3px solid var(--biru-tua);
+  background-color: var(--emas);
+  border: 3px solid var(--utama-gelap);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 10px rgba(255, 180, 0, 0.5);
 }
 
 .timeline-content {
   background: var(--putih);
-  border-left: 5px solid var(--gold);
+  border-left: 5px solid var(--emas);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -153,16 +152,16 @@ nav ul li a:hover {
 /* Profil */
 .profil-card {
   background: var(--putih);
-  border-top: 5px solid var(--gold);
+  border-top: 5px solid var(--emas);
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profil-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Modal */
@@ -170,9 +169,9 @@ nav ul li a:hover {
   background-color: var(--putih);
   padding: 2rem;
   border-radius: 10px;
-  border-top: 6px solid var(--gold);
-  border-bottom: 6px solid var(--merah-tua);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  border-top: 6px solid var(--emas);
+  border-bottom: 6px solid var(--utama-gelap);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Sejarah */
@@ -180,8 +179,8 @@ nav ul li a:hover {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  background: linear-gradient(145deg, #ffffff, #f0f3f8);
-  border-left: 6px solid var(--merah-tua);
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
+  border-left: 6px solid var(--emas);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -194,11 +193,11 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--biru-tua), #001a3d);
-  color: var(--gold);
+  background: linear-gradient(135deg, var(--utama-gelap), #000000);
+  color: var(--emas);
   text-align: center;
   padding: 2rem;
-  border-top: 4px solid var(--merah-tua);
+  border-top: 4px solid var(--emas);
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
