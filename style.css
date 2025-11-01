@@ -210,20 +210,8 @@ main {
   overflow-x: auto;
   padding: 3rem 2rem;
   border-left: none;
-  border-bottom: none;
+  border-bottom: 4px solid var(--abu-terang);
   scroll-behavior: smooth;
-}
-
-/* GARIS HITAM DI TENGAH TITIK */
-.timeline::after {
-  content: '';
-  position: absolute;
-  top: 25px; /* posisi garis di tengah titik emas */
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--utama-gelap);
-  z-index: 1;
 }
 
 /* TITIK EMAS DI GARIS */
@@ -237,7 +225,7 @@ main {
 .timeline-item::before {
   content: '';
   position: absolute;
-  top: 16px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   width: 18px;
@@ -250,7 +238,7 @@ main {
 
 /* KONTEN DI BAWAH GARIS */
 .timeline-content {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   background-color: var(--putih);
   border: 1px solid #ddd;
   border-top: 5px solid var(--emas);
