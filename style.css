@@ -199,46 +199,99 @@ main {
     text-align: center;
 }
 
-/* CSS KEGIATAN (TIMELINE) */
+/* TIMELINE KE SAMPING */
 .timeline {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 0;
-  border-left: 4px solid var(--abu-terang);
-}
-
-.timeline-item {
   display: flex;
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 2.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 3rem 2rem;
+  border-left: none;
+  border-bottom: none;
+  scroll-behavior: smooth;
 }
 
-/* TITIK EMAS */
+/* GARIS HITAM DI TENGAH TITIK */
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 25px; /* posisi garis di tengah titik emas */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--utama-gelap);
+  z-index: 1;
+}
+
+/* TITIK EMAS DI GARIS */
+.timeline-item {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 250px;
+  text-align: center;
+}
+
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -12px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
   background-color: var(--emas);
   border: 3px solid var(--utama-gelap);
   border-radius: 50%;
   z-index: 2;
 }
 
-/* GARIS HITAM DARI TITIK KE GARIS UTAMA */
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  left: -3px;
-  top: 25px;
-  width: 3px;
-  height: 25px;
-  background-color: var(--utama-gelap);
-  z-index: 1;
+/* KONTEN DI BAWAH GARIS */
+.timeline-content {
+  margin-top: 2.5rem;
+  background-color: var(--putih);
+  border: 1px solid #ddd;
+  border-top: 5px solid var(--emas);
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--hitam);
+  font-size: 1.2rem;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.timeline-content li {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+/* TANGGAL DAN KETERANGAN */
+.timeline-date {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-date span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--abu-terang);
+  display: block;
+}
+
+.timeline-date p {
+  font-size: 0.95rem;
+  color: var(--teks-biasa);
+  margin: 0.2rem 0 0 0;
 }
 
 /* ======================================= */
