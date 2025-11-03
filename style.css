@@ -688,3 +688,13 @@ footer {
   }
 }
     
+.gambar-tema {
+  max-width: 800px; /* samain sama .tema-container */
+  margin: 0 auto;   /* biar tengah dan sejajar */
+}
+
+.gambar-tema img {
+  width: 100%;
+  border-radius: 10px; /* biar gaya sama */
+  display: block;
+}
