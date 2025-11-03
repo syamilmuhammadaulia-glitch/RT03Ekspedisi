@@ -628,3 +628,11 @@ footer {
 .eksplorasi-card p {
   color: #555;
   font-size: 1
+
+#beranda img {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
