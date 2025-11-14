@@ -718,3 +718,14 @@ footer {
   border-radius: 8px
   display: block
 }
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
