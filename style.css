@@ -729,3 +729,8 @@ footer {
   margin-top: 40px;
 }
 
+.dok-content {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+}
