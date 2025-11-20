@@ -219,24 +219,28 @@ main {
     text-align: center;
 }
 
-/* CSS KEGIATAN (TIMELINE HORIZONTAL) */
+/* CSS KEGIATAN (TIMELINE HORIZONTAL - VERSI FIX SCROLL) */
 .timeline {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
-    
-    /* Memberi ruang lebih besar di atas agar dot tidak terpotong */
-    padding: 4rem 0 2rem 0; 
+    padding: 4rem 0 2rem 0;
     
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 2rem;
     
-    /* HAPUS BORDER LAMA (Penyebab terpotong) */
-    border-left: none;
-    border-top: none; 
+    /* Hapus gap agar garis antar item bisa menyambung */
+    gap: 0; 
+    
+    /* Hapus border/garis lama pada container */
+    border: none; 
+}
+
+/* Hapus garis container lama jika masih ada */
+.timeline::after {
+    display: none;
 }
 
 /* Scrollbar Cantik */
@@ -244,44 +248,58 @@ main {
 .timeline::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 5px; }
 .timeline::-webkit-scrollbar-thumb { background: var(--merah-tua); border-radius: 5px; }
 
-/* GARIS BARU (Menggunakan Pseudo-element agar bisa diturunkan) */
-.timeline::after {
-    content: '';
-    position: absolute;
-    /* Posisi garis diturunkan 2.5rem dari atas container */
-    top: 2.5rem; 
-    left: 0;
-    /* Agar garis mengikuti panjang scroll konten, bukan cuma lebar layar */
-    min-width: 100%; 
-    width: max-content; 
-    height: 4px;
-    background-color: var(--merah-tua);
-    z-index: 0;
-}
-
 .timeline-item {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 0; 
-    padding-left: 0; 
-    min-width: 300px; 
+    margin-bottom: 0;
+    
+    /* Menggunakan padding sebagai pengganti gap agar garis menyambung */
+    padding: 0 1.5rem; 
+    
+    min-width: 320px; /* Sedikit diperlebar untuk kompensasi padding */
     flex-shrink: 0;
-    z-index: 1; /* Agar kartu di atas garis */
+    z-index: 1;
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar total */
+}
+
+/* GARIS PENYAMBUNG (Menempel pada setiap item) */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    /* Posisi vertikal disesuaikan agar pas di tengah Dot */
+    top: -1.6rem; 
+    
+    /* Garis memenuhi lebar item */
+    left: 0;
+    width: 100%;
+    
+    height: 4px;
+    background-color: var(--merah-tua);
+    z-index: -1; /* Garis di belakang dot */
+}
+
+/* LOGIKA KHUSUS: Agar garis tidak "bocor" di kiri dan kanan */
+
+/* Item Pertama: Garis mulai dari tengah (50%) ke kanan */
+.timeline-item:first-child::after {
+    left: 50%;
+    width: 50%;
+}
+
+/* Item Terakhir: Garis mulai dari kiri sampai tengah (50%) saja */
+.timeline-item:last-child::after {
+    width: 50%;
+    left: 0;
 }
 
 /* Titik/Dot Kuning */
 .timeline-item::before {
     content: '';
     position: absolute;
-    
-    /* Posisi dot disesuaikan agar pas di tengah garis baru (top 2.5rem) */
-    /* Karena item dimulai setelah padding 4rem, kita tarik ke atas */
-    top: -2.1rem; 
-    
+    top: -2.1rem; /* Posisi Dot */
     left: 50%; 
     transform: translateX(-50%);
-    
     width: 20px;
     height: 20px;
     background-color: var(--gold);
@@ -290,6 +308,7 @@ main {
     z-index: 2;
 }
 
+/* Style Tanggal & Konten */
 .timeline-date {
     flex-basis: auto; 
     padding-right: 0;
@@ -297,18 +316,8 @@ main {
     margin-bottom: 1rem;
 }
 
-.timeline-date span { 
-    font-size: 1.3rem; 
-    font-weight: bold; 
-    color: var(--merah-tua); 
-    display: block; 
-}
-
-.timeline-date p { 
-    font-size: 1rem; 
-    color: var(--teks-biasa); 
-    margin: 0.2rem 0 0 0; 
-}
+.timeline-date span { font-size: 1.3rem; font-weight: bold; color: var(--merah-tua); display: block; }
+.timeline-date p { font-size: 1rem; color: var(--teks-biasa); margin: 0.2rem 0 0 0; }
 
 .timeline-content {
     flex-basis: auto; 
