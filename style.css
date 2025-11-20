@@ -12,7 +12,7 @@
 
     --latar-terang: #FFFFFF;
 
-    --latar-alternatif: #FFFFFF /* Ubah ini agar tidak konflik dengan latar header */
+    --latar-alternatif: #FFFFFF; /* Ubah ini agar tidak konflik dengan latar header */
 
     --teks-biasa: #333;
 
