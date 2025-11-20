@@ -219,27 +219,61 @@ main {
     text-align: center;
 }
 
-/* CSS KEGIATAN (TIMELINE) */
+/* CSS KEGIATAN (TIMELINE HORIZONTAL) */
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem 0;
-    border-left: 4px solid var(--merah-tua);
+    /* Memberi jarak di atas untuk garis horizontal */
+    padding: 4rem 0 2rem 0; 
+    
+    /* Mengatur agar item berjejer ke samping (Row) */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Mencegah item turun ke bawah */
+    overflow-x: auto; /* Mengaktifkan scroll ke samping jika konten panjang */
+    gap: 2rem; /* Jarak antar kartu */
+    
+    /* Garis Horizontal di Atas */
+    border-left: none;
+    border-top: 4px solid var(--merah-tua);
+}
+
+/* Scrollbar Cantik untuk Timeline */
+.timeline::-webkit-scrollbar {
+    height: 10px;
+}
+.timeline::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+.timeline::-webkit-scrollbar-thumb {
+    background: var(--merah-tua);
+    border-radius: 5px;
 }
 
 .timeline-item {
     display: flex;
+    flex-direction: column; /* Tanggal di atas, Isi di bawah */
     position: relative;
-    margin-bottom: 2.5rem; 
-    padding-left: 2.5rem; 
+    margin-bottom: 0; 
+    padding-left: 0; 
+    
+    /* Agar kartu tidak gepeng, kita beri lebar minimal */
+    min-width: 300px; 
+    flex-shrink: 0;
 }
 
+/* Titik/Dot di Garis */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -12px; 
-    top: 5px;
+    
+    /* Posisi di garis atas */
+    top: -4.6rem; /* Disesuaikan agar pas di tengah garis */
+    left: 50%; /* Posisi horizontal di tengah item */
+    transform: translateX(-50%);
+    
     width: 20px;
     height: 20px;
     background-color: var(--emas);
@@ -249,25 +283,44 @@ main {
 }
 
 .timeline-date {
-    flex-basis: 30%; 
-    padding-right: 2rem;
-    text-align: right;
+    flex-basis: auto; 
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.timeline-date span { font-size: 1.3rem; font-weight: bold; color: var(--merah-tua); display: block; }
-.timeline-date p { font-size: 1rem; color: var(--teks-biasa); margin: 0.2rem 0 0 0; }
+.timeline-date span { 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: var(--merah-tua); 
+    display: block; 
+}
+
+.timeline-date p { 
+    font-size: 1rem; 
+    color: var(--teks-biasa); 
+    margin: 0.2rem 0 0 0; 
+}
 
 .timeline-content {
-    flex-basis: 70%; 
+    flex-basis: auto; 
     background-color: var(--putih);
     border: 1px solid #ddd;
-    border-left: 5px solid var(--gold);
+    /* Hiasan border dipindah ke atas kartu */
+    border-top: 5px solid var(--gold);
+    border-left: 1px solid #ddd; 
+    
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.timeline-content h3 { margin: 0 0 1rem 0; color: var(--biru-tua); font-size: 1.4rem; }
+.timeline-content h3 { 
+    margin: 0 0 1rem 0; 
+    color: var(--biru-tua); 
+    font-size: 1.4rem; 
+}
+
 .timeline-content ul { margin: 0; padding-left: 1.5rem; }
 .timeline-content li { margin-bottom: 0.5rem; line-height: 1.5; }
 
