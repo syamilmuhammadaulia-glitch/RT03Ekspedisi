@@ -260,7 +260,7 @@ nav ul li a:focus {
 
 #beranda.hero-section {
 
-    background: linear-gradient(rgba(0, 32, 74, 0.8), rgba(0, 32, 74, 0.8)), url('path/ke/foto_latar_belakang.jpg');
+    background: linear-gradient(rgba(0, 32, 74, 0.8), rgba(0, 32, 74, 0.8)), url('fotobareng');
 
     background-size: cover;
 
