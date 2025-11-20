@@ -1,11 +1,11 @@
 /* Pengaturan Dasar dan Font */
 :root {
-    --biru-tua: ##000000;
+    --biru-tua: #000000;
     --merah-tua: #A00000;
     --gold: #FFD700;
     --putih: #FFFFFF;
     --latar-terang: #FFFFFF;
-    --latar-alternatif: #FFFFFF /* Biru sangat muda */
+    --latar-alternatif: #000000 /* Biru sangat muda */
     --teks-biasa: #333;
 }
 
