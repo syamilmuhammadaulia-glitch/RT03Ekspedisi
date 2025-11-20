@@ -734,3 +734,13 @@ display: grid;
 grid-template-columns: repeat(3, 1fr);
 gap: 10px;
 }
+.dok-content {
+display: flex;
+gap: 10px;
+}
+
+.dok-content img {
+width: 200px;
+height: auto;
+border-radius: 5px;
+}
