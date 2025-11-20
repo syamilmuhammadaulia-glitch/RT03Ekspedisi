@@ -1,12 +1,14 @@
 /* Pengaturan Dasar dan Font */
 :root {
-    --biru-tua: #000000;
+    --hitam: #000000; /* Pastikan variabel hitam ini sudah ada dan bernilai #000000 */
+    --abu-terang: #000000; /* <-- DIUBAH MENJADI HITAM */
+    --emas: #C2A878;
+    --putih: #FFFFFF;
+    --latar-terang: #FFFFFF;
+    --latar-alternatif: #f0f4f8; 
+    --teks-biasa: #333;
+    /* Jika Anda menggunakan --merah-tua untuk batas, pastikan warnanya terlihat kontras */
     --merah-tua: #A00000;
-    --gold: #FFD700;
-    --putih: #FFFFFF;
-    --latar-terang: #FFFFFF;
-    --latar-alternatif: #000000 /* Biru sangat muda */
-    --teks-biasa: #333;
 }
 
 html {}
